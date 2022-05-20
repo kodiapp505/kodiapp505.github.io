@@ -1,0 +1,22 @@
+
+# Created by https://www.gitignore.io/api/linux,macos,python,windows
+# Edit at https://www.gitignore.io/?templates=linux,macos,python,windows
+
+### IDEA ###
+.idea
+.idea/*/
+*\.idea/
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Python ###
+*.pyo
+*.pyc
+

@@ -1,0 +1,38 @@
+<addons>
+
+	<addon id="repository.kodiapp505" name="kodiapp505 repository" version="1.0" provider-name="GOAT">
+		<extension point="xbmc.addon.repository" name="kodiapp505 repository">
+			<info compressed="false">https://raw.githubusercontent.com/kodiapp505/kodiapp505.github.io/master/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/kodiapp505/kodiapp505.github.io/master/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/kodiapp505/kodiapp505.github.io/master/_zips</datadir>
+			<hashes>false</hashes>
+		</extension>
+		<extension point="xbmc.addon.metadata">
+			<summary>kodiapp505 repository</summary>
+			<description>This repository contains all the kodi apps you care about!</description>
+			<platform>all</platform>
+		</extension>
+	</addon>
+
+	<addon id="plugin.video.fargonews" version="1.0.1" name="Fargo News" provider-name="GOAT">
+		<requires>
+			<import addon="xbmc.python" version="3.0.0"/>
+			<import addon="script.module.beautifulsoup4" />
+			<import addon="script.module.requests" />
+			<import addon="script.module.simplejson" />
+		</requires>
+		<extension point="xbmc.python.pluginsource" library="main.py">
+			<provides>video</provides>
+		</extension>
+		<extension point="xbmc.addon.metadata">
+			<summary lang="en">Fargo news and information</summary>
+			<description lang="en">Fargo news and information.</description>
+			<assets>
+				<icon>icon.jpg</icon>
+				<fanart>fanart.jpg</fanart>  
+			</assets>
+			<news></news>
+		</extension>
+	</addon>
+	
+</addons>
