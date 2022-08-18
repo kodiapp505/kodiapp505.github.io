@@ -1,0 +1,1 @@
+certutil -hashfile "addons.xml" md5

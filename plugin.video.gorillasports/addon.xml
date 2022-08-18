@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.gorillasports" version="1.0.1" name="Gorilla Sports" provider-name="GOAT">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.simplejson" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="main.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Gorilla Sports</summary>
+    <description lang="en_GB">Gorilla Sports.</description>
+    <disclaimer lang="en_GB">...</disclaimer>
+    <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>  
+    </assets>
+    <news></news>
+  </extension>
+</addon>
