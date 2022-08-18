@@ -18,7 +18,7 @@ _URL = sys.argv[0]
 # Get the plugin handle as an integer number.
 _HANDLE = int(sys.argv[1])
 
-_MEDIAPATH = xbmcaddon.Addon(id='plugin.video.redditsports').getAddonInfo('path') + 'resources\\media\\'
+_MEDIAPATH = xbmcaddon.Addon(id='plugin.video.gorillasports').getAddonInfo('path') + 'resources\\media\\'
 
 
 def get_url(**kwargs):
