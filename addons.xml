@@ -1,6 +1,6 @@
 <addons>
 
-	<addon id="repository.kodiapp505" name="kodiapp505 repository" version="1.1" provider-name="GOAT">
+	<addon id="repository.kodiapp505" name="kodiapp505 repository" version="1.2" provider-name="GOAT">
 		<extension point="xbmc.addon.repository" name="kodiapp505 repository">
 			<dir>
 				<info compressed="false">https://raw.githubusercontent.com/kodiapp505/kodiapp505.github.io/main/addons.xml</info>
