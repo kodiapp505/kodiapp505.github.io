@@ -16,7 +16,7 @@
 		</extension>
 	</addon>
 
-	<addon id="plugin.video.fargonews" version="1.0.1" name="Fargo News" provider-name="GOAT">
+	<addon id="plugin.video.fargonews" version="1.0.2" name="Fargo News" provider-name="GOAT">
 		<requires>
 			<import addon="xbmc.python" version="3.0.0"/>
 			<import addon="script.module.beautifulsoup4" />

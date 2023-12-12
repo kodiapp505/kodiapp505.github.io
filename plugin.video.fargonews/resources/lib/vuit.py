@@ -6,7 +6,7 @@ import simplejson as json
 def get_vods():
     content = __request("https://www.vuit.com/publishers/235/kvly-my-newsfeed")
     s = BeautifulSoup(content, 'html.parser')
-    payload = s.find_all("script", attrs={"type": "text/javascript"})[2].string
+    payload = s.find_all("script", attrs={"type": "text/javascript"})[4].string
 
     startIndex = payload.find("var json={") + 9
     endIndex = payload.find("$(document).data(")
