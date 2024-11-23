@@ -5,7 +5,7 @@ import xbmcplugin
 import xbmc
 import xbmcaddon
 
-from resources.lib import newson, vuit
+from resources.lib import valleynewslive, wday
 
 #Detroit Lakes
 #https://livestream.com/accounts/27442514/events/8331548/player
@@ -51,35 +51,26 @@ def get_categories():
            "icon": _MEDIAPATH + "networks.icon.png",
             "thumb": _MEDIAPATH + "networks.thumb.png",
             "description": "FOX, CNN, ABC, MSNBC, ..."
-        },
-        {
-            "key": "TC",
-            "name": "Tower Cams",
-            "icon": _MEDIAPATH + 'towercam.icon.png',
-            "thumb": _MEDIAPATH + "towercam.thumb.png",
-            "description": "Tower Cams"
-        }
+        }#,
+        #{
+        #    "key": "TC",
+        #    "name": "Tower Cams",
+        #    "icon": _MEDIAPATH + 'towercam.icon.png',
+        #    "thumb": _MEDIAPATH + "towercam.thumb.png",
+        #    "description": "Tower Cams"
+        #}
     ]
 
 # Fox News
 # 'https://trn03.tulix.tv/AsEAeOtIxz/playlist.m3u8',
 def get_videos(key):
     if key == 'WDAY':
-        streams = [
-            {
-                'name': '[COLOR blue][B]WDAY Storm Tracker[/B][/COLOR]',
-                'thumb': 'https://play-lh.googleusercontent.com/UwqV9DC0OwVDFNKOJBURdedMX22jtOJmErh8n4c6eZL6w4D_HJCv0_rFH9WO3a74hA',
-                'resolver': 'livestream',
-                'src': 'https://livestream.com/accounts/27442514/events/8331542/player',
-                'description': 'Live weather information from WDAY storm tracker team.'
-            }
-        ]
-        streams.extend(newson.get_clips())
+        streams = []
+        streams.extend(wday.get_vods())
         return streams
     elif key == "VNL":
-        streams = vuit.get_live_stream()
-        streams.extend(vuit.get_latest_weather())
-        streams.extend(vuit.get_vods())
+        streams = []
+        streams.extend(valleynewslive.get_vods())
         return streams
     elif key == "MSM":
         return [
@@ -96,20 +87,6 @@ def get_videos(key):
                 'resolver': 'newson',
                 'src': 'https://fox-foxnewsnow-samsungus.amagi.tv/playlist720p.m3u8',
                 'description': 'FOX.'
-            },
-            {
-                'name': '[COLOR red]MSNBC Live[/COLOR]',
-                'thumb': 'http://www.freeintertv.com/images/tv/msnbc_live.jpg',
-                'resolver': 'newson',
-                'src': 'https://1420543146.rsc.cdn77.org/Q3LsNSHe9G3pjI88NPNXqg==,1653031597/LS-ATL-54548-10/tracks-v1a1/mono.m3u8|origin=https://www.livenewsnow.com&referer=https://www.livenewsnow.com',
-                'description': 'MSNBC.'
-            },
-            {
-                'name': '[COLOR red]CNBC Live[/COLOR]',
-                'thumb': 'http://www.freeintertv.com/images/tv/cnbc_live.jpg',
-                'resolver': 'newson',
-                'src': 'https://1143561436.rsc.cdn77.org/ePDqbWmS0JDN8hRBisOAYg==,1653022388/1143561436/tracks-v1a1/mono.m3u8',
-                'description': 'CNBC.'
             },
             {
                 'name': '[COLOR red]Bloomberg Live[/COLOR]',

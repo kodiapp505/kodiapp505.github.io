@@ -16,4 +16,4 @@ def resolveSrc(playerUrl):
 
 
 def getDuluthHarborUrl():
-    return __get_livestream_m3u8Url("https://livestream.com/accounts/27442514/events/8331544/player")
+    return "https://livestream.com/accounts/27442514/events/8331544/player"

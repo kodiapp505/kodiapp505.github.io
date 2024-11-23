@@ -1,7 +1,7 @@
 import sys
 from urllib.parse import parse_qsl
 import xbmc
-from resources.lib import livestream, channels, vuit
+from resources.lib import livestream, channels, valleynewslive, wday
 
 #xbmc.log(vuit.get_mainpage(), xbmc.LOGINFO)
 #xbmc.log(vuit.get_streams(), xbmc.LOGINFO)
@@ -14,17 +14,7 @@ _HANDLE = int(sys.argv[1])
 
 
 def router(paramstring):
-    """
-    Router function that calls other functions
-    depending on the provided paramstring
-
-    :param paramstring: URL encoded plugin paramstring
-    :type paramstring: str
-    """
-    # Parse a URL-encoded paramstring to the dictionary of
-    # {<parameter>: <value>} elements
     params = dict(parse_qsl(paramstring))
-    # Check the parameters passed to the plugin
     if params:
         if params['action'] == 'listing':
             # Display the list of videos in a provided category.
@@ -35,8 +25,11 @@ def router(paramstring):
             if params['resolver'] == 'livestream':
                 src = livestream.resolveSrc(src)
             
-            if params['resolver'] == 'vuit':
-                src = vuit.resolveVodUrl(src)
+            if params['resolver'] == 'valleynewslive':
+                src = valleynewslive.resolveVodUrl(src)
+
+            if params['resolver'] == 'wday':
+                src = wday.resolveSrc(src)
             
             channels.play_video(src)
         else:
